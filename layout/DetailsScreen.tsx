@@ -1,14 +1,7 @@
 import React, { useState } from "react";
-import {
-  View,
-  Text,
-  Image,
-  StyleSheet,
-  TouchableOpacity,
-  ScrollView,
-} from "react-native";
-import { Dimensions } from "react-native";
+import { Dimensions, Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import get from "../api/get";
+import Icon from "../components/Icon";
 
 var width = Dimensions.get("window").width; //full width
 
@@ -23,7 +16,7 @@ function DetailsScreen({ navigation: { goBack }, route }) {
   };
 
   React.useEffect(() => {
-    //  In search api there is no info about subscribers /star
+    //  In search api there is no info about subscribers/star
     getSubscribers();
   }, []);
 
@@ -31,10 +24,7 @@ function DetailsScreen({ navigation: { goBack }, route }) {
     <View style={styles.container}>
       <View style={styles.header}>
         <TouchableOpacity onPress={() => goBack()}>
-          <Image
-            style={styles.back}
-            source={require("../assets/icons/leading-icon.png")}
-          />
+          <Icon style={styles.back} iconName={`leading-icon.png`} />
         </TouchableOpacity>
 
         <Text style={styles.title}>{repo.name}</Text>
@@ -60,7 +50,7 @@ function DetailsScreen({ navigation: { goBack }, route }) {
                   left: 5,
                 }}
               >
-                <Image source={require("../assets/icons/forks-icon.png")} />
+                <Icon style={styles.back} iconName={`forks-icon.png`} />{" "}
               </View>
             </View>
           </View>
@@ -73,7 +63,7 @@ function DetailsScreen({ navigation: { goBack }, route }) {
                 {repo.stargazers_count}
               </Text>
               <View style={styles.stats.count.icon}>
-                <Image source={require("../assets/icons/star-icon.png")} />
+                <Icon style={styles.back} iconName={`star-icon.png`} />{" "}
               </View>
             </View>
           </View>
@@ -83,7 +73,7 @@ function DetailsScreen({ navigation: { goBack }, route }) {
             <View style={styles.stats.count}>
               <Text style={styles.stats.count.number}>{subscribers}</Text>
               <View style={styles.stats.count.icon}>
-                <Image source={require("../assets/icons/watchers-icon.png")} />
+                <Icon style={styles.back} iconName={`watchers-icon.png`} />{" "}
               </View>
             </View>
           </View>

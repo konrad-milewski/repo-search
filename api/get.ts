@@ -1,4 +1,4 @@
-import headers from  './headers'
+import headers from './headers';
 
 const get = async (url:string, signal?) => {
   try {

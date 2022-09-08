@@ -1,8 +1,8 @@
-import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import SearchScreen from "../SearchScreen";
+import * as React from "react";
 import DetailsScreen from "../DetailsScreen";
+import SearchScreen from "../SearchScreen";
 
 const Stack = createNativeStackNavigator();
 

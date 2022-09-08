@@ -1,15 +1,16 @@
-import { Image, StyleSheet, Text, View } from "react-native";
 import React, { useRef, useState } from "react";
+import { StyleSheet, Text, View } from "react-native";
+import get from "../api/get";
+import Icon from "../components/Icon";
+import NoResults from "../components/NoResults";
 import SearchInput from "../components/SearchInput";
 import SearchResults from "../components/SearchResults/SearchResults";
-import get from "../api/get";
-import NoResults from "../components/NoResults";
 
 const SearchPage = ({ navigation }) => {
   const [emptyInput, setEmptyInput] = useState(true);
   const [repos, setRepos] = useState<any>([]);
   const [error, setError] = useState("");
-  const [inputValue, setInputValue] = useState("")
+  const [inputValue, setInputValue] = useState("");
 
   const fetchController = useRef<any>(null);
 
@@ -45,7 +46,7 @@ const SearchPage = ({ navigation }) => {
   return (
     <View style={styles.container}>
       {error.length !== 0 && <Text style={styles.error}>{error}</Text>}
-      <SearchInput emptyInput={emptyInput}  func={fetchRepos} />
+      <SearchInput emptyInput={emptyInput} func={fetchRepos} />
       {!emptyInput &&
         (repos ? (
           repos.length !== 0 ? (
@@ -55,10 +56,7 @@ const SearchPage = ({ navigation }) => {
           )
         ) : (
           <View style={styles.spinner.container}>
-            <Image
-              style={styles.spinner.img}
-              source={require("../assets/spinner.gif")}
-            />
+            <Icon style={styles.spinner.img} iconName={`spinner.gif`} />
           </View>
         ))}
     </View>
