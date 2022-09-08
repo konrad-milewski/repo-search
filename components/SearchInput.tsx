@@ -1,33 +1,38 @@
 import React, { useState } from "react";
 import {
-  StyleSheet, TextInput,
+  Image,
+  StyleSheet,
+  Text,
+  TextInput,
   TouchableOpacity,
-  View
+  View,
 } from "react-native";
-import Icon from "./Icon";
 
-const SearchInput = ({ func, emptyInput }) => {
-  const [key, setKey] = useState(Math.random());
+const SearchInput = ({ func, emptyInput}) => {
+  const [key, setKey] = useState(Math.random())
 
-  async function clearSearch() {
-    setKey(Math.random());
-    await func("");
+  async function clearSearch(){
+    setKey(Math.random())
+    await func('')
   }
-
   return (
     <View key={key} style={styles.searchSection}>
-      <Icon style={styles.icon} iconName={`search-icon`} />
+      <Image
+        style={styles.icon}
+        source={require("../assets/icons/search-icon.png")}
+      />
       <TextInput
         style={styles.input}
         placeholder="Search for valuable resources"
         onChangeText={async (value) => await func(value)}
         underlineColorAndroid="transparent"
       />
-      {!emptyInput && (
-        <TouchableOpacity onPress={clearSearch}>
-          <Icon style={styles.icon} iconName={`delete-icon`} />
-        </TouchableOpacity>
-      )}
+      {!emptyInput && <TouchableOpacity onPress={clearSearch}>
+        <Image
+          style={styles.icon}
+          source={require("../assets/icons/delete-icon.png")}
+        />
+      </TouchableOpacity>}
     </View>
   );
 };
