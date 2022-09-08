@@ -2,18 +2,17 @@ import React, { useState } from "react";
 import {
   Image,
   StyleSheet,
-  Text,
   TextInput,
   TouchableOpacity,
   View,
 } from "react-native";
 
-const SearchInput = ({ func, emptyInput}) => {
-  const [key, setKey] = useState(Math.random())
+const SearchInput = ({ func, emptyInput }) => {
+  const [key, setKey] = useState(Math.random());
 
-  async function clearSearch(){
-    setKey(Math.random())
-    await func('')
+  async function clearSearch() {
+    setKey(Math.random());
+    await func("");
   }
   return (
     <View key={key} style={styles.searchSection}>
@@ -27,12 +26,14 @@ const SearchInput = ({ func, emptyInput}) => {
         onChangeText={async (value) => await func(value)}
         underlineColorAndroid="transparent"
       />
-      {!emptyInput && <TouchableOpacity onPress={clearSearch}>
-        <Image
-          style={styles.icon}
-          source={require("../assets/icons/delete-icon.png")}
-        />
-      </TouchableOpacity>}
+      {!emptyInput && (
+        <TouchableOpacity onPress={clearSearch}>
+          <Image
+            style={styles.icon}
+            source={require("../assets/icons/delete-icon.png")}
+          />
+        </TouchableOpacity>
+      )}
     </View>
   );
 };
