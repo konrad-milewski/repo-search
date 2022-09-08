@@ -35,7 +35,7 @@ const SeachItem = ({ navigation, item }) => {
 
 export default SeachItem;
 
-const styles = StyleSheet.create({
+const styles = StyleSheet.create<any>({
   container: {
     marginBottom: 15,
     borderWidth: 1,

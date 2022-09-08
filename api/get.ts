@@ -1,6 +1,6 @@
 import headers from  './headers'
 
-const get = async (url, signal) => {
+const get = async (url:string, signal?) => {
   try {
     const response = await fetch(url, {
       headers: {
@@ -12,7 +12,7 @@ const get = async (url, signal) => {
     const json = await response.json();
     return json;
   } catch (error) {
-    // console.error(error);
+    console.error(error);
   }
 };
 

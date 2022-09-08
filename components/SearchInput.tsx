@@ -37,7 +37,7 @@ const SearchInput = ({ func, emptyInput}) => {
   );
 };
 
-const styles = StyleSheet.create({
+const styles = StyleSheet.create<any>({
   searchSection: {
     flexDirection: "row",
     justifyContent: "center",

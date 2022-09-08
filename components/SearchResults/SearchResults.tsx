@@ -16,7 +16,7 @@ const SearchResults = ({ navigation, repos }) => {
   );
 };
 
-const styles = StyleSheet.create({
+const styles = StyleSheet.create<any>({
   container: {
     marginBottom: 80,
   },

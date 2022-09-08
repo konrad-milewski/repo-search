@@ -1,5 +1,6 @@
 import Navigation from "./layout/global/Navigation";
 import { LogBox, StyleSheet, SafeAreaView } from "react-native";
+import React from 'react';
 
 LogBox.ignoreAllLogs();
 

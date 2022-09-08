@@ -17,7 +17,7 @@ const NoResults = ({ inputValue }) => {
 
 export default NoResults;
 
-const styles = StyleSheet.create({
+const styles = StyleSheet.create<any>({
   container: {
     flex: 1,
     justifyContent: "flex-start",

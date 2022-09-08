@@ -7,11 +7,11 @@ import NoResults from "../components/NoResults";
 
 const SearchPage = ({ navigation }) => {
   const [emptyInput, setEmptyInput] = useState(true);
-  const [repos, setRepos] = useState([]);
+  const [repos, setRepos] = useState<any>([]);
   const [error, setError] = useState("");
   const [inputValue, setInputValue] = useState("")
 
-  const fetchController = useRef(null);
+  const fetchController = useRef<any>(null);
 
   async function fetchRepos(value) {
     if (fetchController.current) {
@@ -67,7 +67,7 @@ const SearchPage = ({ navigation }) => {
 
 export default SearchPage;
 
-const styles = StyleSheet.create({
+const styles = StyleSheet.create<any>({
   container: {
     flex: 1,
     paddingHorizontal: 5,
