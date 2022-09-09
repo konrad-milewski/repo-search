@@ -15,7 +15,7 @@ function DetailsScreen({ navigation: { goBack }, route }) {
   };
 
   React.useEffect(() => {
-    //  In search api there is no info about subscribers /star
+    //  In search api there is no info about subscribers / watchers
     getSubscribers();
   }, []);
 
